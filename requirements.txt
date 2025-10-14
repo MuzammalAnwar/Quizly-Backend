@@ -1,0 +1,9 @@
+Django==5.1.2
+djangorestframework==3.15.2
+django-cors-headers==4.4.0
+python-dotenv==1.0.1
+yt-dlp==2024.10.7
+openai-whisper==20240930
+pydub==0.25.1
+drf-spectacular==0.27.2
+google-genai==0.2.1
