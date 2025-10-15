@@ -25,8 +25,26 @@ SECRET_KEY = 'django-insecure-acum*wxc=5&9l)#%@t&1lbx*240l069k$y9%t(kvvqbyh$2e2!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "quizly-api.muzammal-anwar.at",
+    "quizly.muzammal-anwar.at",
+    '127.0.0.1'
+]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://quizly.muzammal-anwar.at",
+]
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://quizly.muzammal-anwar.at",
+]
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_DOMAIN = ".muzammal-anwar.at"
 
 # Application definition
 
