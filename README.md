@@ -73,8 +73,34 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configure environment variables
-Create a file named .env in the project root (same directory as manage.py) and add your Gemini API key:
+Create a file named .env in the project root (same directory as manage.py) and configure the variables if required:
 ```bash
+# =========================================
+# Django Settings
+# =========================================
+
+# Keep this key secret in production!
+# To generate one locally, run:
+# python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+SECRET_KEY="your_generated_secret_key_here"
+
+# Debug mode — use True for local development, False for production
+DEBUG=True
+
+# Allowed hosts (comma-separated, no spaces)
+ALLOWED_HOSTS=127.0.0.1,localhost
+
+# CORS & CSRF settings
+CORS_ALLOWED_ORIGINS=http://127.0.0.1:4200,http://localhost:4200
+CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,http://localhost:8000
+CSRF_COOKIE_DOMAIN=your_domain
+
+
+# =========================================
+# External API Keys
+# =========================================
+
+# Gemini / Google API key
 GOOGLE_API_KEY=your_google_api_key_here
 ```
 
