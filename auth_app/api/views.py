@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .serializers import RegistrationSerializer
+from django.conf import settings
 
 
 class RegistrationView(APIView):
@@ -34,7 +35,7 @@ class CookieObtainPairView(TokenObtainPairView):
                 key=name,
                 value=str(value),
                 httponly=True,
-                secure=True,
+                secure=not settings.DEBUG,
                 samesite='Lax',
                 path='/',
             )
